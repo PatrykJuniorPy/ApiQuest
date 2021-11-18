@@ -1,3 +1,3 @@
 # ApiTask
-a task for recruits
+a for python developer
 
