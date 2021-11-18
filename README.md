@@ -1,3 +1,3 @@
 # ApiTask
-a for python developer
+for python developer
 
