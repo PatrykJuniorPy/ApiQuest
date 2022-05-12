@@ -1,11 +1,11 @@
+import requests
 from django.shortcuts import render
-from rest_framework import viewsets
-from .serializers import BooksSerializer
-from .models import Books
+import requests
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 
 
-
-# Create your views here.
-class BooksViewSet(viewsets.ModelViewSet):
-    queryset = Books.objects.all().order_by('title')
-    serializer_class = BooksSerializer
+@api_view(['GET'])
+def books(request):
+    r = requests.get("https://www.googleapis.com/books/v1/volumes?q=Hobbit")
+    return Response(r.json())
